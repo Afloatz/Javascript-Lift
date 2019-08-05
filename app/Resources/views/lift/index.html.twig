@@ -68,10 +68,14 @@
 
     <script>
         $(document).ready(function () {
+            // we use $table by convention to denote a variable that is a jQuery object
             var $table = $('.js-rep-log-table');
 
-            $table.find('.js-delete-rep-log').on('click', function () {
+            $table.find('.js-delete-rep-log').on('click', function (e) {
+                e.preventDefault();
+                
                 console.log('todo delete!');
+
             });
 
             $table.find('tbody tr').on('click', function () {
