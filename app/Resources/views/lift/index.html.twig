@@ -72,10 +72,10 @@
             var $table = $('.js-rep-log-table');
 
             $table.find('.js-delete-rep-log').on('click', function (e) {
+                // To avoid going back at the top of the page because of the html tag <a href="#">
                 e.preventDefault();
-                
-                console.log('todo delete!');
 
+                $(e.target).addClass('text-danger');
             });
 
             $table.find('tbody tr').on('click', function () {
