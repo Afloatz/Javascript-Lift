@@ -70,28 +70,40 @@
     {{ parent() }}
 
     <script>
-        $(document).ready(function () {
-            // we use $table by convention to denote a variable that is a jQuery object
-            var $table = $('.js-rep-log-table');
 
-            $table.find('.js-delete-rep-log').on('click', function (e) {
+        var RepLogApp = {
+            initialize: function ($wrapper) {
+                this.$wrapper = $wrapper;
+
+                this.$wrapper.find('.js-delete-rep-log').on(
+                    'click',
+                    this.handleRepLogDelete
+                );
+
+                this.$wrapper.find('tbody tr').on(
+                    'click',
+                    this.handleRawClick
+                );
+            },
+
+            handleRepLogDelete: function (e) {
                 // To avoid going back at the top of the page because of the html tag <a href="#">
                 e.preventDefault();
 
-                // To put the Delete in red
+                // To put the Delete in red, keyword this refers to the clicked element
                 $(this).addClass('text-danger');
 
                 // To have a rotating spinner instead of the trash when clicking on delete
                 $(this).find('.fa')
                     .removeClass('fa-trash')
                     .addClass('fa-spinner')
-                    .addClass('fa-spin')
+                    .addClass('fa-spin');
 
                 // To delete the entire row
                 // .data() is a shortcut to read a data attribute
                 var deleteUrl = $(this).data('url');
                 var $row = $(this).closest('tr');
-                var $totalWeightContainer = $table.find('.js-total-weight');
+                var $totalWeightContainer = RepLogApp.$wrapper.find('.js-total-weight');
                 var newWeight = $totalWeightContainer.html() - $row.data('weight');
                 $.ajax({
                     url: deleteUrl,
@@ -101,12 +113,19 @@
                         $totalWeightContainer.html(newWeight);
                     }
                 });
+            },
 
-            });
-
-            $table.find('tbody tr').on('click', function () {
+            handleRawClick: function () {
                 console.log('Row clicked');
-            });
+            }
+
+        };
+
+        $(document).ready(function () {
+            // we use $table by convention to denote a variable that is a jQuery object
+            var $table = $('.js-rep-log-table');
+
+            RepLogApp.initialize($table);
         });
 
     </script>
