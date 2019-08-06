@@ -75,7 +75,15 @@
                 // To avoid going back at the top of the page because of the html tag <a href="#">
                 e.preventDefault();
 
-                $(e.target).addClass('text-danger');
+                // To put the Delete in red
+                $(this).addClass('text-danger');
+
+                // To have a rotating spinner instead of the trash after clicking on delete
+                $(this).find('.fa')
+                    .removeClass('fa-trash')
+                    .addClass('fa-spinner')
+                    .addClass('fa-spin');
+
             });
 
             $table.find('tbody tr').on('click', function () {
