@@ -86,6 +86,16 @@
                 );
             },
 
+            updateTotalWeightLifted: function () {
+                var totalWeight = 0;
+                this.$wrapper.find('tbody tr').each(function () {
+                    totalWeight += $(this).data('weight');
+                    
+                });
+
+                this.$wrapper.find('.js-total-weight').html(totalWeight);
+            },
+
             handleRepLogDelete: function (e) {
                 // To avoid going back at the top of the page because of the html tag <a href="#">
                 e.preventDefault();
@@ -103,14 +113,15 @@
                 // .data() is a shortcut to read a data attribute
                 var deleteUrl = $(this).data('url');
                 var $row = $(this).closest('tr');
-                var $totalWeightContainer = RepLogApp.$wrapper.find('.js-total-weight');
-                var newWeight = $totalWeightContainer.html() - $row.data('weight');
                 $.ajax({
                     url: deleteUrl,
                     method: 'DELETE',
                     success: function () {
-                        $row.fadeOut();
-                        $totalWeightContainer.html(newWeight);
+                        $row.fadeOut('normal', function () {
+                            $row.remove();
+                            RepLogApp.updateTotalWeightLifted();
+                            
+                        });
                     }
                 });
             },
