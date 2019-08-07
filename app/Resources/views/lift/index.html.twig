@@ -71,6 +71,7 @@
 
     <script>
 
+        // Create the object RepLopApp
         var RepLogApp = {
             initialize: function ($wrapper) {
                 this.$wrapper = $wrapper;
@@ -85,7 +86,7 @@
                     this.handleRawClick.bind(this)
                 );
             },
-            
+
             updateTotalWeightLifted: function () {
                 var totalWeight = 0;
                 this.$wrapper.find('tbody tr').each(function () {
@@ -114,13 +115,15 @@
                 // .data() is a shortcut to read a data attribute
                 var deleteUrl = $link.data('url');
                 var $row = $link.closest('tr');
+                // Use of the variable self to ensure that in our callback function success, "this" is the object RepLogApp
+                var self = this;
                 $.ajax({
                     url: deleteUrl,
                     method: 'DELETE',
                     success: function () {
                         $row.fadeOut('normal', function () {
                             $(this).remove();
-                            RepLogApp.updateTotalWeightLifted();
+                            self.updateTotalWeightLifted();
                             
                         });
                     }

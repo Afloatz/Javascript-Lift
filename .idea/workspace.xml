@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d7d5d2-094d-4489-9c26-119e97b5babb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/lift/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lift/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/lift/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="54" />
+            <state relative-caret-position="240">
+              <caret line="117" column="123" selection-start-line="117" selection-start-column="123" selection-end-line="117" selection-end-column="123" />
             </state>
           </provider>
         </entry>
@@ -216,12 +215,12 @@
       <workItem from="1565007892682" duration="5740000" />
       <workItem from="1565075548102" duration="5181000" />
       <workItem from="1565091725098" duration="6431000" />
-      <workItem from="1565183688338" duration="1082000" />
+      <workItem from="1565183688338" duration="1772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20961000" />
+    <option name="totallyTimeSpent" value="21651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="840" extended-state="6" />
@@ -265,8 +264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/lift/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="54" />
+        <state relative-caret-position="240">
+          <caret line="117" column="123" selection-start-line="117" selection-start-column="123" selection-end-line="117" selection-end-column="123" />
         </state>
       </provider>
     </entry>
