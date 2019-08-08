@@ -1,10 +1,15 @@
-(function () {
-    
-    // Create the object RepLopApp
-    var RepLogApp = {
+
+//This is a special JavaScript directive that tells your browser to activate a more strict parsing mode. Now, certain things that were allowed before, will cause legit errors.
+'use strict';
+
+// Self executing function
+(function (window, $) {
+
+    window.RepLogApp = {
         initialize: function ($wrapper) {
             this.$wrapper = $wrapper;
-            Helper.initialize($wrapper);
+            // Returns a new instance of Helper, which we set on a property
+            this.helper = new Helper($wrapper);
 
             this.$wrapper.find('.js-delete-rep-log').on(
                 'click',
@@ -19,7 +24,7 @@
 
         updateTotalWeightLifted: function () {
             this.$wrapper.find('.js-total-weight').html(
-                Helper.calculateTotalWeight()
+                this.helper.calculateTotalWeight()
             );
         },
 
@@ -65,18 +70,19 @@
      *
      * A "private" object
      */
-    var Helper = {
-        initialize: function ($wrapper) {
+    /*We set Helper as a function so we can instantiate it and use the keyword new
+      The function is the constructor */
+    var Helper = function ($wrapper) {
             this.$wrapper = $wrapper;
-        },
-
-        calculateTotalWeight: function () {
-            var totalWeight = 0;
-            this.$wrapper.find('tbody tr').each(function () {
-                totalWeight += $(this).data('weight');
-            });
-
-            return totalWeight;
-        }
     };
-})();
+
+    Helper.calculateTotalWeight = function () {
+        var totalWeight = 0;
+        this.$wrapper.find('tbody tr').each(function () {
+            totalWeight += $(this).data('weight');
+        });
+
+        return totalWeight;
+    };
+
+})(window, jQuery);

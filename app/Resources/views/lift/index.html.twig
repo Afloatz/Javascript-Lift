@@ -70,8 +70,9 @@
     {{ parent() }}
 
     <script src="{{ asset('assets/js/RepLogApp.js') }}"></script>
+
     <script>
-        console.log(Helper);
+        console.log(window);
 
         $(document).ready(function () {
             // we use $table by convention to denote a variable that is a jQuery object

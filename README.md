@@ -1,10 +1,3 @@
-Javascript for PHP Geeks Tutorial
-=================================
-
-This repository holds the screencast code, script and all the AJAX
-you can eat for the [Modern JavaScript Tutorials](http://knpuniversity.com/tracks/javascript#modern-javascript)
-on KnpUniversity. 
-
 ## Setup
 
 If you've just downloaded the code, congratulations!
@@ -67,12 +60,3 @@ via the preferences which provides more auto-completion for Symfony projects.
 
 Have fun!
 
-## Have some Ideas or Feedback?
-
-And as always, thanks so much for your support and letting us do what
-we love!
-
-If you have suggestions or questions, please feel free to
-open an issue or message us.
-
-<3 Your friends at KnpUniversity
