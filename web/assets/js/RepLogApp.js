@@ -19,6 +19,12 @@
             'click',
             this.handleRawClick.bind(this)
         );
+
+        this.$wrapper.find('.js-new-rep-log-form').on(
+            'submit',
+            this.handleNewFormSubmit.bind(this)
+
+        );
     };
 
     $.extend(window.RepLogApp.prototype, {
@@ -63,8 +69,22 @@
 
         handleRawClick: function () {
             console.log('Row clicked');
+        },
+
+        // We give the event argument to the function
+        handleNewFormSubmit:function (e) {
+            // It will prevent the form from submitting
+            e.preventDefault();
+
+            // Send the request via Ajax
+            var $form = $(e.currentTarget);
+            $.ajax({
+                url: $form.attr('action'),
+                method: 'POST',
+                data: $form.serialize()
+            })
         }
-        });
+    });
 
     /**
      *
