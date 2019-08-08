@@ -72,13 +72,11 @@
     <script src="{{ asset('assets/js/RepLogApp.js') }}"></script>
 
     <script>
-        console.log(window);
-
         $(document).ready(function () {
             // we use $table by convention to denote a variable that is a jQuery object
             var $table = $('.js-rep-log-table');
 
-            RepLogApp.initialize($table);
+            var repLopApp = new RepLogApp($table);
         });
     </script>
 

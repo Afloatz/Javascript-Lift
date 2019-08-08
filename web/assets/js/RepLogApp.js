@@ -4,24 +4,24 @@
 
 // Self executing function
 (function (window, $) {
+    // Constructor
+    window.RepLogApp = function ($wrapper) {
+        this.$wrapper = $wrapper;
+        // Returns a new instance of Helper, which we set on a property
+        this.helper = new Helper($wrapper);
 
-    window.RepLogApp = {
-        initialize: function ($wrapper) {
-            this.$wrapper = $wrapper;
-            // Returns a new instance of Helper, which we set on a property
-            this.helper = new Helper($wrapper);
+        this.$wrapper.find('.js-delete-rep-log').on(
+            'click',
+            this.handleRepLogDelete.bind(this)
+        );
 
-            this.$wrapper.find('.js-delete-rep-log').on(
-                'click',
-                this.handleRepLogDelete.bind(this)
-            );
+        this.$wrapper.find('tbody tr').on(
+            'click',
+            this.handleRawClick.bind(this)
+        );
+    };
 
-            this.$wrapper.find('tbody tr').on(
-                'click',
-                this.handleRawClick.bind(this)
-            );
-        },
-
+    $.extend(window.RepLogApp.prototype, {
         updateTotalWeightLifted: function () {
             this.$wrapper.find('.js-total-weight').html(
                 this.helper.calculateTotalWeight()
@@ -64,7 +64,7 @@
         handleRawClick: function () {
             console.log('Row clicked');
         }
-        };
+        });
 
     /**
      *
@@ -73,16 +73,21 @@
     /*We set Helper as a function so we can instantiate it and use the keyword new
       The function is the constructor */
     var Helper = function ($wrapper) {
-            this.$wrapper = $wrapper;
+        // We create the $wrapper property
+        this.$wrapper = $wrapper;
     };
 
-    Helper.calculateTotalWeight = function () {
-        var totalWeight = 0;
-        this.$wrapper.find('tbody tr').each(function () {
-            totalWeight += $(this).data('weight');
-        });
+    $.extend(Helper.prototype, {
+        calculateTotalWeight: function () {
+            var totalWeight = 0;
+            this.$wrapper.find('tbody tr').each(function () {
+                totalWeight += $(this).data('weight');
+            });
 
-        return totalWeight;
-    };
+            return totalWeight;
+        }
+    });
+
+
 
 })(window, jQuery);
