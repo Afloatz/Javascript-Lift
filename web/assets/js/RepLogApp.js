@@ -10,18 +10,21 @@
         // Returns a new instance of Helper, which we set on a property
         this.helper = new Helper($wrapper);
 
-        this.$wrapper.find('.js-delete-rep-log').on(
+        this.$wrapper.on(
             'click',
+            '.js-delete-rep-log',
             this.handleRepLogDelete.bind(this)
         );
 
-        this.$wrapper.find('tbody tr').on(
+        this.$wrapper.on(
             'click',
+            'tbody tr',
             this.handleRawClick.bind(this)
         );
 
-        this.$wrapper.find('.js-new-rep-log-form').on(
+        this.$wrapper.on(
             'submit',
+            '.js-new-rep-log-form',
             this.handleNewFormSubmit.bind(this)
 
         );
