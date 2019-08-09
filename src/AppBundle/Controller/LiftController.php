@@ -28,13 +28,6 @@ class LiftController extends BaseController
             $em->persist($repLog);
             $em->flush();
 
-            // If it's AJAX, we are returning only one row
-            if ($request->isXmlHttpRequest()) {
-                return $this->render('lift/_repRow.html.twig', [
-                    'repLog' => $repLog
-                ]);
-            }
-
             $this->addFlash('notice', 'Reps crunched!');
 
             return $this->redirectToRoute('lift');
@@ -46,15 +39,6 @@ class LiftController extends BaseController
         $totalWeight = 0;
         foreach ($repLogs as $repLog) {
             $totalWeight += $repLog->getTotalWeightLifted();
-        }
-
-        // We are returning only the form and not the all html page if it's an AJAX request
-        if ($request->isXmlHttpRequest()) {
-            $html = $this->renderView('lift/_form.html.twig', [
-                'form' => $form->createView()
-            ]);
-
-            return new Response($html, 400);
         }
 
         return $this->render('lift/index.html.twig', array(

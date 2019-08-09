@@ -81,20 +81,19 @@
 
             // Send the request via Ajax
             var $form = $(e.currentTarget);
-            var $tbody = this.$wrapper.find('tbody');
-            var self = this;
             $.ajax({
-                url: $form.attr('action'),
+                url: $form.data('url'),
                 method: 'POST',
                 data: $form.serialize(),
                 // data is the html we want to put on the page
                 success: function(data) {
-                    $tbody.append(data);
-                    self.updateTotalWeightLifted();
+                    // todo
+                    console.log('Success!');
                 },
                 error: function(jqXHR) {
-                    $form.closest('.js-new-rep-log-form-wrapper')
-                        .html(jqXHR.responseText);
+                    // todo
+                    console.log('error :(');
+
                 }
             })
         }
