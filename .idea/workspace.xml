@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d7d5d2-094d-4489-9c26-119e97b5babb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/lift/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lift/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/LiftController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/LiftController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/assets/js/RepLogApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/RepLogApp.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/assets/js/RepLogApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+            <state relative-caret-position="260">
+              <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -253,12 +251,12 @@
       <workItem from="1565091725098" duration="6431000" />
       <workItem from="1565183688338" duration="5551000" />
       <workItem from="1565250945613" duration="11124000" />
-      <workItem from="1565336028917" duration="3142000" />
+      <workItem from="1565336028917" duration="4040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39696000" />
+    <option name="totallyTimeSpent" value="40594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="840" extended-state="6" />
@@ -350,8 +348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/js/RepLogApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
+        <state relative-caret-position="260">
+          <caret line="85" column="58" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
         </state>
       </provider>
     </entry>

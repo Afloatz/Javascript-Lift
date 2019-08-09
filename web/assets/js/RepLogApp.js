@@ -81,11 +81,16 @@
 
             // Send the request via Ajax
             var $form = $(e.currentTarget);
+            var formData = {};
+            // To put the data in the correct format
+            $.each($form.serializeArray(), function (key, fieldData) {
+                formData[fieldData.name] = fieldData.value;
+            });
             $.ajax({
                 url: $form.data('url'),
                 method: 'POST',
-                data: $form.serialize(),
-                // data is the html we want to put on the page
+                // turn the data into JSON
+                data: JSON.stringify(formData),
                 success: function(data) {
                     // todo
                     console.log('Success!');
